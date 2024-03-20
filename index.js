@@ -71,7 +71,7 @@ app.get("/stats-policies-downloads.svg", async function (req, res) {
   const resp = await fetch(fetchUrl, {'Accept-Encoding': 'gzip, deflate, br, zstd'});
   const bufferData = await resp.arrayBuffer();
   res.writeHead(200, {
-     'Content-Type': 'image/svg',
+     'Content-Type': 'image/svg+xml',
      'Content-Length': bufferData.byteLength
    });
   res.end(Buffer.from(bufferData,'base64'));
@@ -84,7 +84,7 @@ app.get("/stats-policies-prints.svg", async function (req, res) {
   const resp = await fetch(fetchUrl, {'Accept-Encoding': 'gzip, deflate, br, zstd'});
   const bufferData = await resp.arrayBuffer();
   res.writeHead(200, {
-     'Content-Type': 'image/svg',
+     'Content-Type': 'image/svg+xml',
      'Content-Length': bufferData.byteLength
    });
   res.end(Buffer.from(bufferData,'base64'));
@@ -97,7 +97,7 @@ app.get("/stats-docs-prints.svg", async function (req, res) {
   const resp = await fetch(fetchUrl, {'Accept-Encoding': 'gzip, deflate, br, zstd'});
   const bufferData = await resp.arrayBuffer();
   res.writeHead(200, {
-     'Content-Type': 'image/svg',
+     'Content-Type': 'image/svg+xml',
      'Content-Length': bufferData.byteLength
    });
   res.end(Buffer.from(bufferData,'base64'));
@@ -110,7 +110,7 @@ app.get("/stats-docs-downloads.svg", async function (req, res) {
   const resp = await fetch(fetchUrl, {'Accept-Encoding': 'gzip, deflate, br, zstd'});
   const bufferData = await resp.arrayBuffer();
   res.writeHead(200, {
-     'Content-Type': 'image/svg',
+     'Content-Type': 'image/svg+xml',
      'Content-Length': bufferData.byteLength
    });
   res.end(Buffer.from(bufferData,'base64'));
