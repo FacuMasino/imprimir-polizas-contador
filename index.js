@@ -1,7 +1,7 @@
-import express from "express";
-import {createImage} from "./createImage.js";
-import {getOthersPrints, getOthersDownloads, 
-  getPoliciesPrints, getPoliciesDownloads} from "./firebaseData.js";
+const express = require("express");
+const {createImage} = require("./createImage.js");
+const {getOthersPrints, getOthersDownloads, 
+  getPoliciesPrints, getPoliciesDownloads} = require("./firebaseData.js");
 
 const app = express();
 let port = process.env.PORT || 3300;

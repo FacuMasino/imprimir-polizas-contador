@@ -1,4 +1,4 @@
-import {createCanvas} from "canvas";
+const {createCanvas} = require("canvas");
 
 const width = 80;
 const height = 30;
@@ -22,4 +22,4 @@ const createImage = (text) => {
 	return buffer;
 }
 
-export {createImage};
+module.exports = {createImage};
