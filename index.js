@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/stats-docs-prints.png", async function (req, res) {
+app.get("/stats-printed-docs", async function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const totalPrints = await getOthersPrints();
   const image = createImage(totalPrints);
@@ -28,7 +28,7 @@ app.get("/stats-docs-prints.png", async function (req, res) {
   res.end(Buffer.from(image,'base64'));
 });
 
-app.get("/stats-docs-downloads.png", async function (req, res) {
+app.get("/stats-downloaded-docs.png", async function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const totalPrints = await getOthersDownloads();
   const image = createImage(totalPrints);
@@ -40,7 +40,7 @@ app.get("/stats-docs-downloads.png", async function (req, res) {
   res.end(Buffer.from(image,'base64'));
 });
 
-app.get("/stats-policies-prints.png", async function (req, res) {
+app.get("/stats-printed-policies.png", async function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const totalPrints = await getPoliciesPrints();
   const image = createImage(totalPrints);
@@ -52,7 +52,7 @@ app.get("/stats-policies-prints.png", async function (req, res) {
   res.end(Buffer.from(image,'base64'));
 });
 
-app.get("/stats-policies-downloads.png", async function (req, res) {
+app.get("/stats-downloaded-policies.png", async function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const totalPrints = await getPoliciesDownloads();
   const image = createImage(totalPrints);
@@ -64,7 +64,7 @@ app.get("/stats-policies-downloads.png", async function (req, res) {
   res.end(Buffer.from(image,'base64'));
 });
 
-app.get("/stats-policies-downloads.svg", async function (req, res) {
+app.get("/stats-downloaded-policies.svg", async function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const total = await getPoliciesDownloads();
   const fetchUrl = `${badgeEndpoint}Polizas%20descargadas%3A%20${total}-171669`;
@@ -77,7 +77,7 @@ app.get("/stats-policies-downloads.svg", async function (req, res) {
   res.end(Buffer.from(bufferData,'base64'));
 });
 
-app.get("/stats-policies-prints.svg", async function (req, res) {
+app.get("/stats-printed-policies.svg", async function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const total = await getPoliciesPrints();
   const fetchUrl = `${badgeEndpoint}Polizas%20impresas%3A%20${total}-171669`;
@@ -90,7 +90,7 @@ app.get("/stats-policies-prints.svg", async function (req, res) {
   res.end(Buffer.from(bufferData,'base64'));
 });
 
-app.get("/stats-docs-prints.svg", async function (req, res) {
+app.get("/stats-printed-docs.svg", async function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const total = await getOthersPrints();
   const fetchUrl = `${badgeEndpoint}Documentos%20impresos%3A%20${total}-171669`;
@@ -103,7 +103,7 @@ app.get("/stats-docs-prints.svg", async function (req, res) {
   res.end(Buffer.from(bufferData,'base64'));
 });
 
-app.get("/stats-docs-downloads.svg", async function (req, res) {
+app.get("/stats-downloaded-docs.svg", async function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const total = await getOthersDownloads();
   const fetchUrl = `${badgeEndpoint}Documentos%20descargados%3A%20${total}-171669`;
